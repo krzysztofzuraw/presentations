@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <title>reveal.js</title>
+    <title>Lessons Learned</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/theme/simple.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -26,29 +26,33 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section>Slide 1</section>
-            <section>Slide 2</section>
             <section>
-                <h2>Pretty Code</h2>
-                <pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-if( supports3DTransforms ) {
-
-var nodes = document.querySelectorAll( selector );
-
-for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-  var node = nodes[i];
-
-  if( !node.className ) {
-    node.className += ' roll';
-  }
-}
-}
-}
-                </code></pre>
-                <p>Code syntax highlighting courtesy of
-                    <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+                <h1>Lessons Learned</h1>
+                <h3>from integrating Django & GraphQL</h3>
+                <p>
+                    <small>Created by
+                        <a href="https://krzysztofzuraw.com">Krzysztof Żuraw</a>
+                    </small>
+                </p>
             </section>
+            <section>
+                <h1>Who I am?</h1>
+                <h3 class="fragment">Python and JavaScript Developer at
+                    <a href="https://stxnext.com/">STXNext</a> based in Wrocław.
+                </h3>
+            </section>
+            <section>
+                <img data-src="bang.png">
+            </section>
+            <section>
+                <h1>​ Lesson 1: GraphQL is cool</h1>
+                <h3 class="fragment">if you know how to use it</h3>
+            </section>
+            <section>
+                <h2>Technology stack</h2>
+                <img src="test.jpg" class="fragment">
+            </section>
+
         </div>
     </div>
 
@@ -56,9 +60,6 @@ for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
     <script src="js/reveal.js"></script>
 
     <script>
-        // More info about config & dependencies:
-        // - https://github.com/hakimel/reveal.js#configuration
-        // - https://github.com/hakimel/reveal.js#dependencies
         Reveal.initialize({
             dependencies: [
                 { src: 'plugin/markdown/marked.js' },
