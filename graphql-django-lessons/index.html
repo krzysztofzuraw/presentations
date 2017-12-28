@@ -52,7 +52,53 @@
             </section>
             <section data-background-image="stack.jpg" data-background-size="1000px">
             </section>
-            <section></section>
+            <section>
+                <section data-background-image="graphql.png" data-background-size="1000px">
+                    <img src="what.jpg" class="fragment">
+                </section>
+                <section data-background-image="desc.jpg" data-background-size="750px">
+                </section>
+                <section>
+                    <h2>​Ask for what you need</h2>
+                    <pre><code class="hljs" data-trim>
+                        {
+                            allActors{
+                                lastName
+                            }
+                        }
+                    </code></pre>
+                    <div class="fragment">
+                        <h2>Get results</h2>
+                        <pre><code class="hljs" data-trim>
+                            {
+                                "data": {
+                                    "allActors": [
+                                    {
+                                        "lastName": "Travolta"
+                                    },
+                                    {
+                                        "lastName": "Jackson"
+                                    },
+                                }
+                            }
+                            </code></pre>
+                    </div>
+                </section>
+                <section>
+                    <h2>Get many resources in a single request</h2>
+                    <pre><code class="hljs" data-trim>
+                    {
+                        film(id: 1) {
+                            title
+                            actors {
+                                firstName
+                                lastName
+                            }
+                        }
+                    }
+                    </code></pre>
+                </section>
+            </section>
         </div>
     </div>
 
