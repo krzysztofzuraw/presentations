@@ -98,6 +98,100 @@
                     }
                     </code></pre>
                 </section>
+                <section>
+                    <pre><code class="hljs" data-trim>
+                        {
+                        "data": {
+                            "film": {
+                                "title": "Pulp Fiction",
+                                "actors": [
+                                    {
+                                    "firstName": "John",
+                                    "lastName": "Travolta"
+                                    },
+                                    {
+                                    "firstName": "Samuel L.",
+                                    "lastName": "Jackson"
+                                    },
+                        ]}}
+                    </code></pre>
+                </section>
+                <section>
+                    <h2>Mutating data</h2>
+                    <pre><code class="hljs" data-trim>
+                        mutation CreateFilm {
+                            createFilm(film: {
+                                title: "My cool title"
+                            }) {
+                              title
+                              id
+                            }
+                          }
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs" data-trim>
+                        {
+                            "data": {
+                              "createFilm": {
+                                "title": "My cool title",
+                                "id": 123
+                              }
+                            }
+                          }
+                    </code></pre>
+                </section>
+            </section>
+            <section>
+                <h2>Lesson 2: Graphene-Django & Graphene-Python</h2>
+                <pre class="fragment"><code class="hljs" data-trim>
+class Film(graphene.ObjectType):
+
+    class Meta:
+        interfaces = (relay.Node, )
+
+    title = graphene.String()
+    actors = graphene.List(Actor)
+    air_date = graphene_datetime.DateTime()
+    rating = graphene.Int()
+
+                </code></pre>
+            </section>
+            <section>
+                <pre class="stretch"><code class="hljs" data-trim>
+                    {
+                        "name": "film",
+                        "description": "The ID of the object",
+                        "args": [
+                          {
+                            "name": "id",
+                            "description": null,
+                            "type": {
+                              "kind": "NON_NULL",
+                              "name": null,
+                              "ofType": {
+                                "kind": "SCALAR",
+                                "name": "ID",
+                                "ofType": null
+                              }
+                            },
+                            "defaultValue": null
+                          }
+                        ],
+                        "type": {
+                          "kind": "OBJECT",
+                          "name": "Film",
+                          "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    }
+                </code></pre>
+            </section>
+            <section>
+                <h2>n + 1 queries problem</h2>
+                <p class="fragment">How we handled this problem?</p>
+                <a class="fragment" href="https://github.com/graphql-python/graphene/issues/358">Link to Github issue</a>
+
+
             </section>
         </div>
     </div>
