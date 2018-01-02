@@ -141,7 +141,7 @@
                 </section>
             </section>
             <section>
-                <h2>Lesson 2: Graphene-Django & Graphene-Python</h2>
+                <h2>Lesson 2: Graphene-Python</h2>
                 <pre class="fragment"><code class="hljs" data-trim>
 class Film(graphene.ObjectType):
 
@@ -190,8 +190,46 @@ class Film(graphene.ObjectType):
                 <h2>n + 1 queries problem</h2>
                 <p class="fragment">How we handled this problem?</p>
                 <a class="fragment" href="https://github.com/graphql-python/graphene/issues/358">Link to Github issue</a>
-
-
+            </section>
+            <section>
+                <h2>Memroy leaks</h2>
+            </section>
+            <section>
+                <h2>Lesson 3: ​GraphRelated Field</h2>
+                <p class="fragment">Why?</p>
+                <p class="fragment">​Almost like ForeginKey in Django but without existence checks</p>
+            </section>
+            <section>
+                <h2>Lesson 4: Number of requests</h2>
+                <p class="fragment">Why?</p>
+                <p class="fragment">Inspired by Django ORM `prefetch_related`</p>
+                <p class="fragment">Fetch list of objects using one HTTP query and place them in thread-safe attribute inside a context.</p>
+            </section>
+            <section>
+                <h2>Caching</h2>
+                <p class="fragment">Why?</p>
+                <p class="fragment">HTTP Headers caching</p>
+            </section>
+            <section>
+                <h2>Set caching headers to inform</h2>
+                <p class="fragment">For how long cache the response?</p>
+                <p class="fragment">When there is need for refetch data for different users using the `Vary` header</p>
+            </section>
+            <section>
+                <h2>Cache policy</h2>
+                <p class="fragment">Short cache times - less than 1 minute</p>
+            </section>
+            <section>
+                <h2>Lesson 5: Authentication</h2>
+                <p class="fragment">What?</p>
+                <p class="fragment">JWT</p>
+                <p class="fragment">Why?</p>
+            </section>
+            <section>
+                <h2>This is the end</h2>
+                <p class="fragment">Thank you</p>
+                <p class="fragment">My blog: krzysztofzuraw.com</p>
+                <p class="fragment">My twitter: @krzysztof_zuraw</p>
             </section>
         </div>
     </div>
