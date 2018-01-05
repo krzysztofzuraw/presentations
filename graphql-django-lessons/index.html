@@ -194,7 +194,7 @@ class Film(graphene.ObjectType):
                 <a class="fragment" href="https://github.com/graphql-python/graphene/issues/358">Link to Github issue</a>
             </section>
             <section>
-                <h2>Memroy leaks</h2>
+                <h2>Memory leaks</h2>
             </section>
             <section>
                 <h2>Lesson 3: ​GraphRelated Field</h2>
@@ -202,14 +202,30 @@ class Film(graphene.ObjectType):
                 <p class="fragment">​Almost like ForeginKey in Django but without existence checks</p>
             </section>
             <section>
+                <pre><code class="hljs" data-trim>
+# one microservice
+class Film(models.Model):
+    title = models.CharField(max_length=100)
+    air_date = models.DateField()
+    actor = GraphRelatedField('Actor')
+                </code></pre>
+                <pre class="fragment"><code class="hljs" data-trim>
+# another microservice
+class Actor(models.Model):
+    name = models.CharField(max_length=100)
+                </code></pre>
+                <pre class="fragment"><code class="hljs" data-trim>
+# usage
+actor_name = film.actor.name
+                </code></pre>
+            </section>
+            <section>
                 <h2>Lesson 4: Number of requests</h2>
-                <p class="fragment">Why?</p>
                 <p class="fragment">Inspired by Django ORM `prefetch_related`</p>
                 <p class="fragment">Fetch list of objects using one HTTP query and place them in thread-safe attribute inside a context.</p>
             </section>
             <section>
                 <h2>Caching</h2>
-                <p class="fragment">Why?</p>
                 <p class="fragment">HTTP Headers caching</p>
             </section>
             <section>
