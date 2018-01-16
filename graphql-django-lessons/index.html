@@ -8,7 +8,7 @@
     <title>Lessons Learned</title>
 
     <link rel="stylesheet" href="css/reveal.css">
-    <link rel="stylesheet" href="css/theme/simple.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
     <!-- Theme used for syntax highlighting of code -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
@@ -26,7 +26,7 @@
 <body>
     <div class="reveal">
         <div class="slides">
-            <section>
+            <section data-background-image="lesson_bg.jpg">
                 <h1>Lessons Learned</h1>
                 <h3>from integrating Django & GraphQL</h3>
                 <p>
@@ -35,25 +35,25 @@
                     </small>
                 </p>
             </section>
-            <section>
+            <section data-background-image="stx_bg.jpg">
                 <h1>Who I am?</h1>
                 <h3 class="fragment">Python and JavaScript Developer at
                     <a href="https://stxnext.com/">STXNext</a> based in Wrocław.
                 </h3>
             </section>
-            <section data-background-image="bang.png" data-background-size="600px">
+            <section data-background-image="bang.png" data-background-size="600px" data-background-color="#fff">
             </section>
-            <section>
+            <section data-background-image="lesson_1_bg.jpg">
                 <h1>​ Lesson 1: GraphQL is cool</h1>
                 <h3 class="fragment">if you know how to use it</h3>
             </section>
-            <section>
+            <section data-background-image="tech_bg.jpg">
                 <h2>Technology stack</h2>
             </section>
-            <section data-background-image="stack.jpg" data-background-size="1000px">
+            <section data-background-image="stack.jpg" data-background-size="1000px" data-background-color="#fff">
             </section>
             <section>
-                <section data-background-image="graphql.png" data-background-size="1000px">
+                <section data-background-image="graphql.png" data-background-size="1000px" data-background-color="#fff">
                     <img src="what.jpg" class="fragment">
                 </section>
                 <section data-background-image="desc.jpg" data-background-size="750px">
@@ -140,9 +140,9 @@
                     </code></pre>
                 </section>
             </section>
-            <section data-background-image="pow.png" data-background-size="600px">
+            <section data-background-image="pow.png" data-background-size="600px" data-background-color="#fff">
             </section>
-            <section>
+            <section data-background-image="python_bg.jpg">
                 <h2>Lesson 2: Graphene-Python</h2>
                 <pre class="fragment"><code class="hljs" data-trim>
 class Film(graphene.ObjectType):
@@ -157,7 +157,7 @@ class Film(graphene.ObjectType):
 
                 </code></pre>
             </section>
-            <section>
+            <section data-background-image="python_bg.jpg">
                 <pre class="stretch"><code class="hljs" data-trim>
                     {
                         "name": "film",
@@ -188,20 +188,17 @@ class Film(graphene.ObjectType):
                     }
                 </code></pre>
             </section>
-            <section>
-                <h2>n + 1 queries problem</h2>
-                <p class="fragment">How we handled this problem?</p>
-                <a class="fragment" href="https://github.com/graphql-python/graphene/issues/358">Link to Github issue</a>
-            </section>
-            <section>
+            <section data-background-image="memory_bg.jpg">
                 <h2>Memory leaks</h2>
             </section>
-            <section>
+            <section data-background-image="kapow.jpg" data-background-size="600px" data-background-color="#fff">
+            </section>
+            <section data-background-image="lesson_1_bg.jpg">
                 <h2>Lesson 3: ​GraphRelated Field</h2>
                 <p class="fragment">Why?</p>
                 <p class="fragment">​Almost like ForeginKey in Django but without existence checks</p>
             </section>
-            <section>
+            <section data-background-image="lesson_1_bg.jpg">
                 <pre><code class="hljs" data-trim>
 # one microservice
 class Film(models.Model):
@@ -219,29 +216,35 @@ class Actor(models.Model):
 actor_name = film.actor.name
                 </code></pre>
             </section>
-            <section>
+            <section data-background-image="zap.jpg" data-background-size="600px" data-background-color="#fff">
+            </section>
+            <section data-background-image="request_bg.jpg">
                 <h2>Lesson 4: Number of requests</h2>
                 <p class="fragment">Inspired by Django ORM `prefetch_related`</p>
                 <p class="fragment">Fetch list of objects using one HTTP query and place them in thread-safe attribute inside a context.</p>
             </section>
-            <section>
+            <section data-background-image="cache_bg.jpg">
                 <h2>Caching</h2>
                 <p class="fragment">HTTP Headers caching</p>
             </section>
-            <section>
+            <section data-background-image="cache_bg.jpg">
                 <h2>Set caching headers to inform</h2>
                 <p class="fragment">For how long cache the response?</p>
                 <p class="fragment">When there is need for refetch data for different users using the `Vary` header</p>
             </section>
-            <section>
+            <section data-background-image="cache_bg.jpg">
                 <h2>Cache policy</h2>
                 <p class="fragment">Short cache times - less than 1 minute</p>
             </section>
-            <section>
+            <section data-background-image="bam.png" data-background-size="600px" data-background-color="#fff">
+            </section>
+            <section data-background-image="auth_bg.jpg">
                 <h2>Lesson 5: Authentication</h2>
                 <p class="fragment">What?</p>
                 <p class="fragment">JWT</p>
                 <p class="fragment">Why?</p>
+            </section>
+            <section data-background-image="free.jpg" data-background-size="600px" data-background-color="#fff">
             </section>
             <section>
                 <h2>This is the end</h2>
