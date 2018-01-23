@@ -36,7 +36,7 @@
                 </p>
             </section>
             <section data-background-image="stx_bg.jpg">
-                <h1>Who I am?</h1>
+                <h1>Who Am I?</h1>
                 <h3 class="fragment">Python and JavaScript Developer at
                     <a href="https://stxnext.com/">STXNext</a> based in Wrocław.
                 </h3>
@@ -117,7 +117,7 @@
                     </code></pre>
                 </section>
                 <section>
-                    <h2>Mutating data</h2>
+                    <h2>Data Mutation</h2>
                     <pre><code class="hljs" data-trim>
                         mutation CreateFilm {
                             createFilm(film: {
@@ -138,6 +138,29 @@
                             }
                           }
                     </code></pre>
+                </section>
+                <section>
+                    <pre><code class="hljs" data-trim>
+                        mutation UpdateFilm {
+                            updateFilm(film: {
+                                title: "Totaly different title"
+                            }) {
+                              title
+                            }
+                          }
+                    </code></pre>
+                    <pre class="fragment"><code class="hljs" data-trim>
+                        {
+                            "data": {
+                              "updateFilm": {
+                                "title": "Totaly different title",
+                              }
+                            }
+                          }
+                    </code></pre>
+                </section>
+                <section>
+                    <video class="stretch" data-autoplay src="out.ogv"></video>
                 </section>
             </section>
             <section data-background-image="pow.png" data-background-size="600px" data-background-color="#fff">
@@ -188,8 +211,11 @@ class Film(graphene.ObjectType):
                     }
                 </code></pre>
             </section>
-            <section data-background-image="memory_bg.jpg">
-                <h2>Memory leaks</h2>
+            <section data-background-image="python_bg.jpg">
+                <h2>Conclusion</h2>
+                <h3 class="fragment">Python has a great GraphQL library</h3>
+                <h3 class="fragment">BUT</h3>
+                <p class="fragment">You have to be aware that it is a new library</p>
             </section>
             <section data-background-image="kapow.jpg" data-background-size="600px" data-background-color="#fff">
             </section>
@@ -216,6 +242,12 @@ class Actor(models.Model):
 actor_name = film.actor.name
                 </code></pre>
             </section>
+            <section data-background-image="lesson_1_bg.jpg">
+                <h2>Conclusion</h2>
+                <h3 class="fragment">We want to have better communication between microservices</h3>
+                <h3 class="fragment">Just to</h3>
+                <p class="fragment">Merge them together</p>
+            </section>
             <section data-background-image="zap.jpg" data-background-size="600px" data-background-color="#fff">
             </section>
             <section data-background-image="request_bg.jpg">
@@ -236,6 +268,10 @@ actor_name = film.actor.name
                 <h2>Cache policy</h2>
                 <p class="fragment">Short cache times - less than 1 minute</p>
             </section>
+            <section data-background-image="request_bg.jpg">
+                <h2>Conclusion</h2>
+                <h3 class="fragment">Using caching by Vary header and prefetching objects is good idea</h3>
+            </section>
             <section data-background-image="bam.png" data-background-size="600px" data-background-color="#fff">
             </section>
             <section data-background-image="auth_bg.jpg">
@@ -243,6 +279,19 @@ actor_name = film.actor.name
                 <p class="fragment">What?</p>
                 <p class="fragment">JWT</p>
                 <p class="fragment">Why?</p>
+            </section>
+            <section data-background-image="auth_bg.jpg">
+                <h2>Conclusion</h2>
+                <h3 class="fragment">Choosing JWT was a good idea - it allows us to store additional info</h3>
+            </section>
+            <section>
+                <h2>Frontend Tooling</h2>
+                <img src="relay.png" class="fragment">
+                <img src="apollo.png" class="fragment">
+            </section>
+            <section>
+                <h2>Conclusion</h2>
+                <h3 class="fragment">A lot of new libraries - not always mature</h3>
             </section>
             <section data-background-image="free.jpg" data-background-size="600px" data-background-color="#fff">
             </section>
